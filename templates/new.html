@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titl %}
+    <title>New Task</title>
+{% endblock %}
+
+{% block content %}
+    <h2><u>New task:</u></h2>
+    <form action="/new" method="POST">
+        <lable for="titl"><h3>Title:</h3></lable>
+        <input class="input-feild" id="titl" type="text" id="titl" name="titl" placeholder="Title" required>
+    
+        <label for="desc"><h3>Task:</h3></label>
+        <input class="input-feild" id="desc" type="text" id="desc" name="desc" placeholder="Task description">
+
+        <input type="submit" value="Save Task">
+    </form>
+{% endblock %}

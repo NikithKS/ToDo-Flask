@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="discription" content="Flask">
+    <meta name="author" content="NiKi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Only HTML</title> -->
+    <!-- <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}"> -->
+    {% block titl %} {% endblock %}
+    <style>
+      .title-block{
+          display: block;
+          background-color: lightseagreen;
+          font: bolder;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+          text-align: center;
+          height: 15%;
+          margin: 0;
+          padding-top: auto;
+          padding-bottom: auto;
+          /* position: relative; */
+      }
+
+      .title-content {
+        position: absolute;
+        top: 50%;
+        text-align: center;
+      }
+
+      .task-block{
+        border: solid 3px grey ;
+        margin-bottom: 5px;
+        padding: 4px;
+      }
+
+      .task-block:hover {
+        border: solid 3px rgb(30, 150, 144) ;
+        padding: 5px;
+        padding: 4px;
+      }
+
+      .task-title {
+        display: inline-block;
+        color: black;
+        font: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: x-large;
+        margin-left: 0;
+        text-decoration: none;
+        margin-bottom: 15px;
+      }
+
+      .task-date{
+        display: inline;
+        font: bolder;
+        color: slategray;
+        margin-right: 0;
+        margin-left: auto;
+        font-size: small;
+        float: right;
+      }
+
+      .task-content {
+        color: darkslategray;
+        display: inline;
+        text-decoration: none;
+      }
+
+      .done-button {
+        text-align:center;
+        text-decoration: none;
+        color: black;
+        float: right;
+        width: 75px;
+        height: 22px;
+        background-color: teal;
+        border: solid 2px silver;
+        border-radius: 5px;
+      }
+
+      .done-button:hover {
+        background-color:mediumspringgreen;
+        border-bottom: solid 2px teal;
+      }
+
+      .addnew-button {
+        text-decoration: none;
+        background-color: cornflowerblue;
+        position: fixed;
+        bottom: 20px;
+        left: auto;
+        border-radius: 50%;
+        color: lightgoldenrodyellow;
+        font: bolder;
+        font-size: 50px;
+        height: 70px;
+        width: 70px;
+        border: 0;
+      }
+
+      .addnew-button:hover {
+        background-color: darkturquoise;
+      }
+
+      .input-feild {
+        width: 70%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .empty {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+      
+      @media (min-width: 600px){
+        body{
+          padding-left:15% ;
+          padding-right:15% ;
+          height: 1000px;
+        }
+      }
+
+
+    </style>
+  </head>
+
+  <body>
+    <div class = "title-block">
+        <h1>TO-DO List</h1>
+    </div>
+    {% block content %} {% endblock %}
+  </body>
+
+</html>
