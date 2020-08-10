@@ -5,36 +5,63 @@
     <meta charset="utf-8">
     <meta name="discription" content="Flask">
     <meta name="author" content="NiKi">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Only HTML</title> -->
-    <!-- <link rel="stylesheet" href="{{url_for('static', filename = 'css/main.css')}}"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
     {% block titl %} {% endblock %}
     <style>
+
       .title-block{
-          display: block;
-          background-color: lightseagreen;
-          font: bolder;
-          font-family: Verdana, Geneva, Tahoma, sans-serif;
-          text-align: center;
-          height: 15%;
-          margin: 0;
-          padding-top: auto;
-          padding-bottom: auto;
-          /* position: relative; */
-      }
-
-      .title-content {
-        position: absolute;
-        top: 50%;
+        display: block;
+        background-color:#7952b3 ;
+        font-size: 1.3em;
+        font: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-align: center;
+        padding: 1px;
+        margin-top: 7px;
+        margin-bottom: 15px;
+        border-radius: 8px;
+      }
+      
+      .title-block h1 {
+        margin: 10px;
+      }
+      
+      @media (max-width: 700px){
+        .title-block {
+          font-size: 1em;  
+          padding: 7px;
+        }
+
+        body {
+          padding: 7px;
+        }
       }
 
+      
+      body {
+        background-color:rgb(195, 221, 230);
+        max-width: 700px;
+        margin: auto;
+      }
+      
+
+      @media (min-width: 500px){
+        body{
+          /* padding-left:15% ; */
+          /* padding-right:15% ; */
+          height: 1000px;
+          /* padding:15px; */
+        }
+      }
+
+      {% block styleblock %} {% endblock %}
+      
       .task-block{
         border: solid 3px grey ;
         margin-bottom: 5px;
         padding: 4px;
       }
-
+      
       .task-block:hover {
         border: solid 3px rgb(30, 150, 144) ;
         padding: 5px;
@@ -115,13 +142,7 @@
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
       }
       
-      @media (min-width: 600px){
-        body{
-          padding-left:15% ;
-          padding-right:15% ;
-          height: 1000px;
-        }
-      }
+      
 
 
     </style>
