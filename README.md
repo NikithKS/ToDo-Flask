@@ -1,4 +1,11 @@
 # ToDo-Flask
+A simple To-Do list web application built using Flask framework. Currently it is able to perform following operationa:
+1. Tabulate and display all unfinished and fisished tasks
+2. Add new tasks
+3. Edit unfinished tasks
+4. Mark tasks as done
+
+
 Tools used in this project:
 Backed:
     1. Flask Web Framework
@@ -8,11 +15,7 @@ Backed:
 Frontend:
     HTML and CSS only. No framewrorks used.
 
-A simple To-Do list web application built using Flask framework. Currently it is able to perform following operationa:
-1. Tabulate and display all unfinished and fisished tasks
-2. Add new tasks
-3. Edit unfinished tasks
-4. Mark tasks as done
+
 
 It requires following Python modules:
 1. Flask
