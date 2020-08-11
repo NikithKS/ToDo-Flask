@@ -26,3 +26,11 @@ Running the app:
 1. Install required libraries
 2. Run the app.py file
 3. Open the localhost address that you will get, in any browser in your computer to access the web application
+
+Output Screenshots:
+Webview:
+![SS](https://i.ibb.co/cD3m74f/Screenshot-from-2020-08-11-13-32-08.png)
+Mobile view:
+
+![MS](https://i.ibb.co/wMqfvDh/todo-Mobile.png)
+![MS](https://i.ibb.co/wzB6GCS/todo-New-Mobile.png)
