@@ -15,36 +15,146 @@
         margin: 0px;
     }
 
-    .content-block {
-        border: 4px solid #7952b3;
-        padding: 5px;
+    .theme-toggle {
+        display: inline-block;
+        background-color:white;
+        float: right;
+        height: 27px;
+        width: auto;
     }
+
+    .flex-container {
+        display: flex;
+        align-self: stretch; 
+        flex-wrap: nowrap;
+    }
+
+    .content-block {
+        border: solid #7952b3;
+        border-radius: 0 3px 3px 3px;
+    }
+    
+    .task-block {
+        padding: 5px;
+        /* padding: 4px; */
+        border-bottom: 3px solid #7952b3;
+        border-radius: 0 0 0 8px;
+    }
+
+    .task-block:hover {
+        background-color:lightskyblue ;
+    }
+
+    a,
+    a:link,
+    a:visited,
+    a:hover,
+    a:active {
+        text-decoration: none;
+    }
+
+    .task-title {
+        color: black;
+        font: bolder;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: x-large;
+        text-decoration: none;
+    }
+    .task-date{
+        display: block;
+        font: bolder;
+        font-size: xx-small;
+        color: slategray;
+        margin-right: 0;
+        margin-left: auto;
+        font-size: small;
+        margin-bottom: 10px;
+    }
+
+    .task-content {
+        color: darkslategray;
+        display: block;
+        margin-top: 0px;
+        text-decoration: none;
+        text-align: justify;
+      }
+    .done-button {
+        align-self: center;
+        text-decoration: none;
+        color: black;
+        background-color: lightskyblue;
+        border-radius: 5px;     
+        padding: 3px;   
+      }
+
+      .done-button:hover {
+        background-color: #7952b3;
+        border-bottom: solid 3px black;
+      }
+
+      .task-done {
+          padding-left: 3px;
+          margin: 3px;
+      }
+      .addnew-button {
+        text-decoration: none;
+        text-align: center;
+        background-color: #7952b3;
+        position: fixed;
+        bottom: 20px;
+        right : 10px;
+        float: right;
+        margin: auto;
+        border-radius: 50%;
+        color: lightgoldenrodyellow;
+        font: bolder;
+        font-size: 50px;
+        height: 70px;
+        width: 70px;
+        border: 0;
+      }
+
+      .addnew-button:hover {
+        background-color: darkturquoise;
+      }
+
+
+      .empty {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      }
+
     @media (max-width: 400px){
         .subhead {
             padding-right: 40px;
         }
     }
+    @media (min-width: 701px){
+        .addnew-button {
+            right: calc(50% - 330px);
+        }
+    }
+
 
 {% endblock %}
 
 {% block content %}
     <h3 class="subhead"><u>Tasks</u>:   </h3>
-
     <div class="content-block">
     {% set count = [] %}
     {% for item in data %}
     {% if item.status == 0 %}
         {% if count.append(1) %} {% endif %}
-         <div class="task-block">
-            <div class="task-date">{{item.date.strftime("%d-%m-%Y")}}</div>
-                <a class="task-title" href="/edit/{{item.id}}">{{item.title}}</a>
-                <br>
-                <a class="task-content" href="/edit/{{item.id}}">
-                    {{item.task}}
-                </a>
-                <a class="done-button" href="/done/{{item.id}}">Done</a>
-            </div>
-        <!-- <hr> -->
+        <div class="flex-container">
+            <a class="task-block " style="flex-grow: 9;" href="/edit/{{item.id}}">
+                <div class="task-title">{{item.title}}</div>
+                <div class="task-date">{{item.date.strftime("%d-%m-%Y")}}</div>
+                <div class="task-content">{{item.task}} </div>
+            </a>
+            <a class="done-button"  href="/done/{{item.id}}">
+                <div>DONE</div>
+            </a>
+        </div>
     {% endif %}
     {% endfor %}
         {% if count|length %}
@@ -61,7 +171,7 @@
     {% for item in data %}
         {% if item.status == 1 %}
             {% if count.append(1) %} {% endif %}
-            <h3 class="task-done"><strike>{{item.title}}</strike></h3>
+            <h3 class="task-done" ><strike>{{item.title}}</strike></h3>
         {% endif %}
     {% endfor %}
     {% if count|length %}

@@ -4,16 +4,56 @@
     <title>{{item.title}}</title>
 {% endblock  %}
 
-{% block content %}
-<h2><u>EDIT:</u></h2>
+{%block styleblock %}
+.input-feild {
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
-<form action="/edit/{{item.id}}" method="POST">
+.content-block {
+    border: solid #7952b3;
+    border-radius: 0 3px 3px 3px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.subhead {
+    font-style: bolder;
+    display: inline-block;
+    background-color: #7952b3;
+    border-radius: 0 6px 0 0;
+    padding: 3px;
+    padding-right: 75px;
+    margin: 0px;
+}
+
+.save-button:hover {
+    background-color: #7952b3;
+    color: black;
+    padding: 0px 8px;
+    border: 6px 7px;
+    border-radius: 5px;
+}
+
+@media (max-width: 400px){
+    .input-feild {
+        width: 90%;
+    }
+}
+{% endblock %}
+
+{% block content %}
+<h2 class="subhead"><u>EDIT:</u></h2>
+
+<form class="content-block" action="/edit/{{item.id}}" method="POST">
     <lable for="titl"><h3>Title:</h3></lable>
     <input class="input-feild" id="titl" type="text" id="titl" name="titl" value={{ item.title|tojson }}>
     
     <label for="desc"><h3>Task:</h3></label>
     <input class="input-feild" id="desc" type="text" id="desc" name="desc" value={{ item.task|tojson }}>
 
-    <input type="submit" value="Save">
+    <input class="save-button"  type="submit" value="Save">
 </form>
 {% endblock %}

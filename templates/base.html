@@ -39,7 +39,7 @@
 
       
       body {
-        background-color:rgb(195, 221, 230);
+        /* background-color:lightyellow; */
         max-width: 700px;
         margin: auto;
       }
@@ -47,104 +47,11 @@
 
       @media (min-width: 500px){
         body{
-          /* padding-left:15% ; */
-          /* padding-right:15% ; */
           height: 1000px;
-          /* padding:15px; */
         }
       }
 
       {% block styleblock %} {% endblock %}
-      
-      .task-block{
-        border: solid 3px grey ;
-        margin-bottom: 5px;
-        padding: 4px;
-      }
-      
-      .task-block:hover {
-        border: solid 3px rgb(30, 150, 144) ;
-        padding: 5px;
-        padding: 4px;
-      }
-
-      .task-title {
-        display: inline-block;
-        color: black;
-        font: bolder;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        font-size: x-large;
-        margin-left: 0;
-        text-decoration: none;
-        margin-bottom: 15px;
-      }
-
-      .task-date{
-        display: inline;
-        font: bolder;
-        color: slategray;
-        margin-right: 0;
-        margin-left: auto;
-        font-size: small;
-        float: right;
-      }
-
-      .task-content {
-        color: darkslategray;
-        display: inline;
-        text-decoration: none;
-      }
-
-      .done-button {
-        text-align:center;
-        text-decoration: none;
-        color: black;
-        float: right;
-        width: 75px;
-        height: 22px;
-        background-color: teal;
-        border: solid 2px silver;
-        border-radius: 5px;
-      }
-
-      .done-button:hover {
-        background-color:mediumspringgreen;
-        border-bottom: solid 2px teal;
-      }
-
-      .addnew-button {
-        text-decoration: none;
-        background-color: cornflowerblue;
-        position: fixed;
-        bottom: 20px;
-        left: auto;
-        border-radius: 50%;
-        color: lightgoldenrodyellow;
-        font: bolder;
-        font-size: 50px;
-        height: 70px;
-        width: 70px;
-        border: 0;
-      }
-
-      .addnew-button:hover {
-        background-color: darkturquoise;
-      }
-
-      .input-feild {
-        width: 70%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .empty {
-        text-align: center;
-        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-      }
-      
-      
-
-
     </style>
   </head>
 
