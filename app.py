@@ -15,7 +15,6 @@ class items(db.Model):
     date = db.Column(db.DateTime, nullable = False, default = datetime.now())
     status = db.Column(db.Integer, default = 0)
 
-
     def __repr__(self):
         return 'Task' + str(self.id)
 
